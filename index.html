@@ -37,6 +37,33 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script>
+      (function () {
+        emailjs.init("MCjy8SlVfkTObBaCC");
+      })();
+
+      function sendEmail(form) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send email
+        emailjs.sendForm("service_sg2f2nr", "template_zaqhgyh", form).then(
+          function (response) {
+            console.log("Email sent successfully:", response);
+            alert("Request sent successfully! You'll hear from us soon.");
+          },
+          function (error) {
+            console.error("Email failed to send:", error);
+            alert("Request failed to send. Please try again later.");
+          }
+        );
+      }
+    </script>
   </head>
 
   <body>
@@ -60,7 +87,6 @@
             src="img/logo.png"
             alt=""
           />
-          <!-- <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Startup</h1> -->
         </a>
         <button
           class="navbar-toggler"
@@ -74,14 +100,6 @@
           <div class="navbar-nav ms-auto py-0">
             <a href="index.html" class="nav-item nav-link active">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
-            <!-- <a href="service.html" class="nav-item nav-link">Services</a> -->
-            <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div> -->
             <div class="nav-item dropdown">
               <a
                 href="product.html"
@@ -97,11 +115,8 @@
             </div>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
           </div>
-          <!-- <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton> -->
-          <a
-            href="https://htmlcodex.com/startup-company-website-template"
-            class="btn btn-primary py-2 px-4 ms-3"
-            >Book Free Consultion</a
+          <a href="/#qoute" class="btn btn-primary py-2 px-4 ms-3"
+            >Book Free Consultation</a
           >
         </div>
       </nav>
@@ -117,6 +132,7 @@
               class="w-100 object-fit-cover"
               src="img/carousel-1.jpg"
               alt="Image"
+              style="min-height: 500px"
             />
             <div
               class="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -131,8 +147,6 @@
                   Where Every Detail Matters Beyond Fabrication, Building
                   Legacies
                 </h1>
-                <!-- <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
-                            <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a> -->
               </div>
             </div>
           </div>
@@ -141,6 +155,7 @@
               class="w-100 object-fit-cover"
               src="img/carousel-2.jpg"
               alt="Image"
+              style="min-height: 500px"
             />
             <div
               class="carousel-caption d-flex flex-column align-items-center justify-content-center"
@@ -197,7 +212,9 @@
               </div>
               <div class="ps-4">
                 <h5 class="text-white mb-0">Happy Clients</h5>
-                <h1 class="text-white"><span class="mb-0 " data-toggle="counter-up">200</span>+</h1>
+                <h1 class="text-white">
+                  <span class="mb-0" data-toggle="counter-up">200</span>+
+                </h1>
               </div>
             </div>
           </div>
@@ -230,8 +247,10 @@
                 <i class="fa fa-award text-primary"></i>
               </div>
               <div class="ps-4">
-                <h5 class="text-white mb-0">Win Awards</h5>
-                <h1 class="text-white"><span class="mb-0 " data-toggle="counter-up">15</span>+</h1>
+                <h5 class="text-white mb-0">Cities</h5>
+                <h1 class="text-white">
+                  <span class="mb-0" data-toggle="counter-up">15</span>+
+                </h1>
               </div>
             </div>
           </div>
@@ -487,69 +506,142 @@
     <!-- Pricing Plan End -->
 
     <!-- Testimonial Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div
+      class="container-fluid py-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      id="qoute"
+    >
       <div class="container py-5">
-          <div class="row g-5">
-              <div class="col-lg-7">
-                  <div class="section-title position-relative pb-3 mb-5">
-                      <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                      <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
-                  </div>
-                  <div class="row gx-3">
-                      <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                          <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
-                      </div>
-                      <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                          <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support</h5>
-                      </div>
-                  </div>
-                  <p class="mb-4">Begin your journey towards elevated spaces with Siddhpura Aluminium. Our team stands ready to provide personalized solutions tailored to your needs, ensuring quality craftsmanship and exceptional service every step of the way</p>
-                  <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                      <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                          <i class="fa fa-phone-alt text-white"></i>
-                      </div>
-                      <div class="ps-4">
-                          <h5 class="mb-2">Call to ask any question</h5>
-                          <h4 class="text-primary mb-0">+012 345 6789</h4>
-                      </div>
-                  </div>
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="section-title position-relative pb-3 mb-5">
+              <h5 class="fw-bold text-primary text-uppercase">
+                Request A Quote
+              </h5>
+              <h1 class="mb-0 title-text">
+                Need A Free Quote? Please Feel Free to Contact Us
+              </h1>
+            </div>
+            <div class="row gx-3">
+              <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                <h5 class="mb-4">
+                  <i class="fa fa-reply text-primary me-3"></i>Reply within 24
+                  hours
+                </h5>
               </div>
-              <div class="col-lg-5">
-                  <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                      <form>
-                          <div class="row g-3">
-                              <div class="col-xl-12">
-                                  <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                              </div>
-                              <div class="col-12">
-                                  <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                              </div>
-                              <div class="col-12">
-                                  <select class="form-select bg-light border-0" style="height: 55px;">
-                                      <option selected>Select A Service</option>
-                                      <option value="1">Service 1</option>
-                                      <option value="2">Service 2</option>
-                                      <option value="3">Service 3</option>
-                                  </select>
-                              </div>
-                              <div class="col-12">
-                                  <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
-                              </div>
-                              <div class="col-12">
-                                  <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
+              <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                <h5 class="mb-4">
+                  <i class="fa fa-phone-alt text-primary me-3"></i>24 hrs
+                  telephone support
+                </h5>
               </div>
+            </div>
+            <p class="mb-4">
+              Begin your journey towards elevated spaces with Siddhpura
+              Aluminium. Our team stands ready to provide personalized solutions
+              tailored to your needs, ensuring quality craftsmanship and
+              exceptional service every step of the way
+            </p>
+            <div
+              class="d-flex align-items-center mt-2 wow zoomIn"
+              data-wow-delay="0.6s"
+            >
+              <div
+                class="bg-primary d-flex align-items-center justify-content-center rounded"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-phone-alt text-white"></i>
+              </div>
+              <div class="ps-4">
+                <h5 class="mb-2">Call to ask any question</h5>
+                <h4 class="text-primary mb-0">+91 8108600002</h4>
+              </div>
+            </div>
           </div>
+          <div class="col-lg-5">
+            <div
+              class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn"
+              data-wow-delay="0.9s"
+            >
+              <form onsubmit="sendEmail(this)">
+                <div class="row g-3">
+                  <div class="col-xl-12">
+                    <input
+                      required
+                      type="text"
+                      name="Name"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Name"
+                      style="height: 55px"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      required
+                      type="tel"
+                      name="Phone"
+                      class="form-control bg-light border-0"
+                      placeholder="Phone Number"
+                      style="height: 55px"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <input
+                      type="email"
+                      name="Email"
+                      class="form-control bg-light border-0"
+                      placeholder="Your Email"
+                      style="height: 55px"
+                    />
+                  </div>
+                  <div class="col-12 d-flex gap-2">
+                    <select
+                      name="type"
+                      class="form-select bg-light border-0"
+                      style="height: 55px"
+                      placeholder="I am a"
+                    >
+                      <option>Home Owner</option>
+                      <option>Architecture</option>
+                      <option>Contractor</option>
+                      <option>Other</option>
+                    </select>
+                    <select
+                      class="form-select bg-light border-0"
+                      style="height: 55px"
+                      name="work"
+                    >
+                      <option>Window Installation</option>
+                      <option>Door Installation</option>
+                      <option>Service and Repair</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      name="description"
+                      class="form-control bg-light border-0"
+                      rows="3"
+                      placeholder="Describe your work"
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-dark w-100 py-3" type="submit">
+                      Request A Quote
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
+    </div>
     <!-- Testimonial End -->
 
     <!-- Footer Start -->
     <div
-      class="container-fluid bg-dark text-light mt-5 wow fadeInDown"
+      class="container-fluid bg-dark text-light mt-5 wow fadeInUp"
       data-wow-delay="0.1s"
     >
       <div class="container">
@@ -570,12 +662,6 @@
                 We aspire to lead in aluminium fabrication innovation, setting
                 new benchmarks for durability, strength, and style
               </p>
-              <!-- <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-dark">Sign Up</button>
-                            </div>
-                        </form> -->
             </div>
           </div>
           <div class="col-lg-8 col-md-6">
@@ -631,18 +717,18 @@
                 <div
                   class="link-animated d-flex flex-column justify-content-start"
                 >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="/"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="about.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i>About
                     Us</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="product.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i
                     >Products</a
                   >
-                  <a class="text-light mb-2" href="#"
+                  <a class="text-light mb-2" href="contact.html"
                     ><i class="bi bi-arrow-right text-primary me-2"></i
                     >Contact</a
                   >
@@ -663,7 +749,11 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid text-white" style="background: #061429">
+    <div
+      class="container-fluid text-white wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="background: #061429"
+    >
       <div class="container text-center">
         <div class="row justify-content-end">
           <div class="col-lg-8 col-md-6">
@@ -685,9 +775,9 @@
     <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
+    <a target="_blank" href="https://wa.me/918108600002" class="back-to-top"
+      ><img src="img/whatsapp.png" style="width: 60px"
+    /></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

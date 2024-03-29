@@ -359,8 +359,9 @@ h6,
 /*** Service ***/
 .service-item {
     position: relative;
-    height: 300px;
+    /* height: 300px; */
     padding: 0 30px;
+    padding-bottom: 10px;
     transition: .5s;
 }
 
@@ -516,7 +517,7 @@ h6,
 @media (min-width: 991.98px) {
     .facts {
         position: relative;
-        margin-top: -75px;
+        margin-top: -150px;
         z-index: 1;
     }
 }
@@ -527,6 +528,11 @@ h6,
     right: 45px;
     bottom: 45px;
     z-index: 99;
+    transition: 0.5s;
+}
+
+.back-to-top:hover {
+    transform:scale(1.1);
 }
 
 .bg-header {
