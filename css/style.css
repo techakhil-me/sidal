@@ -512,7 +512,11 @@ h6,
     transform: scale(1.15);
 }
 
-
+.facts {
+    position: relative;
+    margin-top: -150px;
+    z-index: 1;
+}
 /*** Miscellaneous ***/
 @media (min-width: 991.98px) {
     .facts {

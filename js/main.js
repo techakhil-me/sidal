@@ -45,7 +45,7 @@
         if (this.matchMedia("(min-width: 992px)").matches) {
 
             $dropdown.click(function() {
-                window.location.href = "/product.html"
+                window.location.href = "/products.html"
             });
 
             $dropdown.hover(
