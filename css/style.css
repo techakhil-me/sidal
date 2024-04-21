@@ -169,6 +169,13 @@ h6,
 }
 
 @media (max-width: 991.98px) {
+    #logo{
+        display: none;
+    }
+    .logo-dark{
+        display: block !important;
+    }
+  
     .sticky-top.navbar-dark {
         position: relative;
         background: #FFFFFF;
@@ -187,6 +194,7 @@ h6,
 }
 
 @media (min-width: 992px) {
+   
     .navbar-dark {
         position: absolute;
         width: 100%;
