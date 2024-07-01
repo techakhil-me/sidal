@@ -58,18 +58,37 @@
 
       function sendEmail(form) {
         event.preventDefault(); // Prevent default form submission
+        var name = form.Name.value;
+        var phone = form.Phone.value;
+        var email = form.Email.value;
+        var type = form.type.value;
+        var work = form.work.value;
+        var description = form.description.value;
 
-        // Send email
-        emailjs.sendForm("service_sg2f2nr", "template_zaqhgyh", form).then(
-          function (response) {
-            console.log("Email sent successfully:", response);
-            alert("Request sent successfully! You'll hear from us soon.");
-          },
-          function (error) {
-            console.error("Email failed to send:", error);
-            alert("Request failed to send. Please try again later.");
-          }
-        );
+
+        fetch('https://script.google.com/macros/s/AKfycbzjNE2gk8vhdh2GTXQGM00lsUSHjIS_JTLq_uMtbSeBR4Tqt0y0Ig3QdnUsfsUPMOgH/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded', // Ensure the content type matches the form submission
+        },
+        body: new URLSearchParams({
+          'Name': name,
+          'Phone': phone,
+          'Email': email,
+          'Type': type,
+          'Work': work,
+          'Description': description
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert("Request sent successfully! You'll hear from us soon.");
+      })
+      .catch((error) => {
+        alert("Request failed to send. Please try again later.");
+      });
+
+     
       }
     </script>
 
@@ -82,7 +101,7 @@
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16585030223"></script>
-<script>c
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -610,6 +629,7 @@
                     <input
                       required
                       type="text"
+                      id="name"
                       name="Name"
                       class="form-control bg-light border-0"
                       placeholder="Your Name"
@@ -620,6 +640,7 @@
                     <input
                       required
                       type="tel"
+                      id="phone"
                       name="Phone"
                       class="form-control bg-light border-0"
                       placeholder="Phone Number"
@@ -630,6 +651,7 @@
                     <input
                       type="email"
                       name="Email"
+                      id="email"
                       class="form-control bg-light border-0"
                       placeholder="Your Email"
                       style="height: 55px"
@@ -638,6 +660,7 @@
                   <div class="col-12 d-flex gap-2">
                     <select
                       name="type"
+                      id="type"
                       class="form-select bg-light border-0"
                       style="height: 55px"
                       placeholder="I am a"
@@ -651,6 +674,7 @@
                       class="form-select bg-light border-0"
                       style="height: 55px"
                       name="work"
+                      id="work"
                     >
                       <option>Window Installation</option>
                       <option>Door Installation</option>
@@ -663,6 +687,7 @@
                       name="description"
                       class="form-control bg-light border-0"
                       rows="3"
+                      id="description"
                       placeholder="Describe your work"
                     ></textarea>
                   </div>
